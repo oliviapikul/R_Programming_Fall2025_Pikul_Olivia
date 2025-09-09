@@ -16,6 +16,7 @@ Repository for R Programming Assignments
 
 #Module 3 Assignment
       blog link: https://rprogrammingjournal.blogspot.com/2025/09/assignment-3-analyzing-poll-data.html
+      
       code: 
       
       Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Bernie")
