@@ -48,20 +48,3 @@ Repository for R Programming Assignments
              fill = "Poll Comparison")
   
 
-
-
-R_Programming_Fall2025_Lastname_Firstname/
-├── Assignment_01_Basic_Functions/
-│   ├── Assignment_01.R
-│   └── README.md
-├── Assignment_02_Data_Visualization/
-│   ├── Assignment_02.R
-│   └── README.md
-├── Assignment_03_Statistics/
-│   ├── Assignment_03.R
-│   └── README.md
-└── Final_Project/
-    ├── Final_Project.R
-    ├── data/          
-    ├── results/       
-    └── README.md
