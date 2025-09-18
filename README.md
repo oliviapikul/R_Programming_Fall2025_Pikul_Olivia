@@ -48,3 +48,103 @@ Repository for R Programming Assignments
              fill = "Poll Comparison")
   
 
+###Module 4 Assignment 
+    blog link: https://rprogrammingjournal.blogspot.com/2025/09/assignment-4-analyzing-hospital-data.html
+
+      code: 
+      library(readxl)
+mydata <- read_excel("Module # 4 assessment_data.xlsx")
+View(mydata)
+
+Frequency <- c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2) 
+BloodPressure <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+FirstAssess  <- c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1)   
+SecondAssess <- c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1)   
+FinalDecision <- c(0, 1, 0, 1, 0, 1, 0, 1, 1, 1) 
+
+df_hosp <- data.frame(
+  Frequency, 
+  BloodPressure,
+  FirstAssess,
+  SecondAssess,
+  FinalDecision,
+  stringAsFactors = FALSE
+)
+
+summary(df_hosp)
+df_hosp <- na.omit(df_hosp)
+summary(df_hosp)
+
+
+par(mfrow = c(1,3))
+boxplot(
+  BloodPressure ~ FirstAssess, data = df_hosp, names = c("Good", "Bad"), 
+  ylab = "Blood Pressure", main = "BP by First MD Assessment"
+)
+
+boxplot( BloodPressure ~ SecondAssess, data = df_hosp, names = c("Low", "High"), ylab = "Blood Pressure", main = "BP by Second MD Assessment")
+
+boxplot(BloodPressure ~ FinalDecision, data = df_hosp, names = c("Low", "High"), ylab = "Blood Pressure", main = "BP by Final Decision")
+
+par(mfrow = c(1,2))
+hist(
+  df_hosp$Frequency,
+  breaks = seq(0,1, by = 0.1), 
+  xlab = "Visit Frequency",
+  main = "Histogram of Visit Frequency"
+)
+
+hist(df_hosp$BloodPressure, 
+     breaks = 8,
+     xlab = "Blood Pressure", 
+     main = "Histogram of Blood Pressure")
+
+library(readxl)
+mydata <- read_excel("Module # 4 assessment_data.xlsx")
+View(mydata)
+
+Frequency <- c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2) 
+BloodPressure <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+FirstAssess  <- c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1)   
+SecondAssess <- c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1)   
+FinalDecision <- c(0, 1, 0, 1, 0, 1, 0, 1, 1, 1) 
+
+df_hosp <- data.frame(
+  Frequency, 
+  BloodPressure,
+  FirstAssess,
+  SecondAssess,
+  FinalDecision,
+  stringAsFactors = FALSE
+)
+
+summary(df_hosp)
+df_hosp <- na.omit(df_hosp)
+summary(df_hosp)
+
+
+par(mfrow = c(1,3))
+boxplot(
+  BloodPressure ~ FirstAssess, data = df_hosp, names = c("Good", "Bad"), 
+  ylab = "Blood Pressure", main = "BP by First MD Assessment"
+)
+
+boxplot( BloodPressure ~ SecondAssess, data = df_hosp, names = c("Low", "High"), ylab = "Blood Pressure", main = "BP by Second MD Assessment")
+
+boxplot(BloodPressure ~ FinalDecision, data = df_hosp, names = c("Low", "High"), ylab = "Blood Pressure", main = "BP by Final Decision")
+
+par(mfrow = c(1,2))
+hist(
+  df_hosp$Frequency,
+  breaks = seq(0,1, by = 0.1), 
+  xlab = "Visit Frequency",
+  main = "Histogram of Visit Frequency"
+)
+
+hist(df_hosp$BloodPressure, 
+     breaks = 8,
+     xlab = "Blood Pressure", 
+     main = "Histogram of Blood Pressure")
+<img width="1070" height="647" alt="Screenshot 2025-09-18 121302" src="https://github.com/user-attachments/assets/45f77b84-a80c-4ea1-8e6e-07f9fec93c72" />
+
+<img width="1182" height="647" alt="Screenshot 2025-09-18 120127" src="https://github.com/user-attachments/assets/78c562bb-6d45-4348-89e7-5dc0b174a9d2" />
