@@ -163,3 +163,6 @@ detA <- det(A)
 
 invB <- tryCatch(solve(B), error = function(e) e)
 detB <- tryCatch(det(B),   error = function(e) e)
+
+blog link : https://rprogrammingjournal.blogspot.com/2025/09/assignment-5-matrix-algebra-in-r.html
+
