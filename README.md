@@ -148,3 +148,18 @@ hist(df_hosp$BloodPressure,
 <img width="1070" height="647" alt="Screenshot 2025-09-18 121302" src="https://github.com/user-attachments/assets/45f77b84-a80c-4ea1-8e6e-07f9fec93c72" />
 
 <img width="1182" height="647" alt="Screenshot 2025-09-18 120127" src="https://github.com/user-attachments/assets/78c562bb-6d45-4348-89e7-5dc0b174a9d2" />
+
+
+#Assignment 5
+
+A <- matrix(1:100,  nrow = 10)
+B <- matrix(1:1000, nrow = 10)
+
+dim(A)
+dim(B)
+
+invA <- solve(A)
+detA <- det(A)
+
+invB <- tryCatch(solve(B), error = function(e) e)
+detB <- tryCatch(det(B),   error = function(e) e)
