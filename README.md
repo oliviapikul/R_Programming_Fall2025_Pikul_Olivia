@@ -166,3 +166,26 @@ detB <- tryCatch(det(B),   error = function(e) e)
 
 blog link : https://rprogrammingjournal.blogspot.com/2025/09/assignment-5-matrix-algebra-in-r.html
 
+##Assignment 6
+
+A <- matrix(c(2, 0, 1, 3), ncol = 2)
+B <- matrix(c(5, 2, 4, -1), ncol = 2)
+
+A + B
+A - B
+
+D <- diag(c(4, 1, 2, 3))
+D
+
+custom <- diag(3,5)
+custom_matrix <- custom
+
+custom_matrix[1, ] <- c(3,1,1,1,1)
+custom_matrix[2:5, 1] <- 2
+custom_matrix
+
+blog link: https://rprogrammingjournal.blogspot.com/2025/10/assignment-6-matrix-operations.html
+
+
+
+
