@@ -188,4 +188,50 @@ blog link: https://rprogrammingjournal.blogspot.com/2025/10/assignment-6-matrix-
 
 
 
+#Assignment 7
 
+code:
+data("mtcars")
+head(mtcars)
+str(mtcars)
+
+summary(mtcars)
+plot(mtcars)
+print(mtcars)
+
+s3_obj <- list(
+  data = head(mtcars, 5),   # first 5 rows
+  description = "Subset of mtcars dataset"
+)
+s3_obj <- list(
+  data = head(mtcars, 5),   # first 5 rows
+  description = "Subset of mtcars dataset"
+)
+class(s3_obj) <- "mtcars_s3"
+
+print.mtcars_s3 <- function(x) {
+  cat("S3 Object: mtcars_s3\n")
+  cat(x$description, "\n")
+  cat("Number of rows:", nrow(x$data), "\n\n")
+  print(x$data)
+}
+print(s3_obj)
+
+setClass("mtcars_s4",
+         slots = c(
+           data = "data.frame",
+           description = "character"
+         ))
+s4_obj <- new("mtcars_s4",
+              data = head(mtcars, 5),
+              description = "Subset of mtcars dataset")
+setGeneric("show_mtcars", function(object) standardGeneric("show_mtcars"))
+setMethod("show_mtcars", "mtcars_s4", function(object) {
+  cat("S4 Object: mtcars_s4\n")
+  cat(object@description, "\n")
+  cat("Number of rows:", nrow(object@data), "\n\n")
+  print(object@data)
+})
+show_mtcars(s4_obj)
+
+blog link:https://rprogrammingjournal.blogspot.com/2025/10/assignment-7-rs-object-oriented-systems.html
