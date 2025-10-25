@@ -277,3 +277,39 @@ write.csv(
 )
 
 blog link: https://rprogrammingjournal.blogspot.com/2025/10/assignment-8-plyr-package.html
+
+
+#Assignment 9
+code:
+
+data(airquality)
+head(airquality)
+aq <- na.omit(airquality)
+
+plot(aq$Temp, aq$Ozone, main = "Ozone vs. Temperature", xlab = "Temperature (F)", ylab = "Ozone (ppb)", col = "steelblue", pch = 19)
+
+boxplot(Ozone ~ Month, data = aq, main = "Ozone levels by Month (May to September)", xlab = "Month", ylab = "Ozone (ppb)", col = c("royalblue", "yellowgreen","orange", "tomato", "blueviolet"))
+
+library(lattice)
+
+histogram( ~Ozone |factor(Month), data = aq, layout = c(3,2), main = "Distribution of Ozone Levels by Month", xlab = "Ozone (ppb)", col = "salmon", type = "count")
+
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+airquality_long <- aq %>%
+  pivot_longer(
+    cols = c(Ozone, Wind, Solar.R),
+    names_to = "Variable",
+    values_to = "Value"
+  )
+
+ggplot(airquality_long, aes(x = Temp, y = Value, color = Variable)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_grid(Variable ~ Month, scales = "free_y") +
+  labs(title = "Air Quality Variables vs Temperature by Month", x = "Temperature (F)", y = "Value") +
+  theme_bw() +
+  theme(legend.position = "none")
+
+blog link: https://rprogrammingjournal.blogspot.com/2025/10/assignment-9-visualization-in-r.html
