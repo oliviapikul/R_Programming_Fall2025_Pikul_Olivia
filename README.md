@@ -313,3 +313,23 @@ ggplot(airquality_long, aes(x = Temp, y = Value, color = Variable)) +
   theme(legend.position = "none")
 
 blog link: https://rprogrammingjournal.blogspot.com/2025/10/assignment-9-visualization-in-r.html
+
+
+##Module 11 assignment
+
+code: 
+tukey_multiple <- function(x) {
+  outliers <- array(TRUE, dim = dim(x))
+  for (j in 1:ncol(x)) {
+    outliers[, j] <- outliers[, j] & tukey.outlier(x[, j])
+  }
+  outlier.vec <- vector("logical", length = nrow(x))
+  for (i in 1:nrow(x)) {
+    outlier.vec[i] <- all(outliers[i, ])
+  }
+  return(outlier.vec)
+}
+corrected_tukey(test_mat)
+set.seed(123)
+test_mat <- matrix(rnorm(50), nrow = 10)
+tukey_multiple(test_mat)
