@@ -1,5 +1,5 @@
 Package: Friedman
-Title: Tools for Cleaning Data 
+Title: CleanData
 Version: 0.0.0.9000
 Authors@R: 
     person("Olivia", "Pikul", , "oliviajpikul@gmail.com", role = c("aut", "cre"))
