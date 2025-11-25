@@ -5,3 +5,5 @@ export(summarize_data)
 export(summary_plot)
 export(compare_groups)
 export(new_csv)
+
+#' @exportS3method print survey
